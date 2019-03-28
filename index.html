@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="../node_modules/angular/angular.min.js" type="text/javascript"></script>
+    <title>AngularJS data binding array</title>
+  </head>
+  <body ng-app="app">
+    <h3 ng-hide=true>Angular is loading</h3>
+    <div ng-controller="ArrayController">
+      <button ng-click="arrayService.load()">load</button>
+      <button ng-click="arrayService.clearRight()">clearRight</button>
+      <button ng-click="arrayService.clearWrong()">clearWrong</button>
+      <button ng-click="fix1()">fix first</button>
+      <p>
+      {{ array1 }}
+      <p>
+      {{ array2 }}
+      <p>
+      {{ array1==array2 }}
+    </div>
+  </body>
+</html>
