@@ -10,33 +10,29 @@ app.controller('ArrayController', function ($scope, arrayService) {
 })
 
 app.service('arrayService', function ($interval, $http) {
-  var r = []
+  var array = []
   var i = 1
-  var j = 0
   this.get = function () {
-    return r
+    return array
   }
   this.load = function () {
     $http.get("https://mknj.de/42.json").then(function (res) {
       i = res.data.i
-      j = 0
       var wert
-      r.length = 0
-      res.data.value.forEach(wert => r.push(wert))
+      array.length = 0
+      res.data.value.forEach(wert => array.push(wert))
     }
     ).catch(console.log)
-    return r
+    return array
   }
   this.clearWrong = function () {
-    r = []
+    array = []
   }
   this.clearRight = function () {
-    r.length = 0
+    array.length = 0
   }
   $interval(function () {
-    var s = i + j
-    j = i
-    i = s
-    r.push(i)
-  }, 3000)
+    i = i+1
+    array.push(i)
+  }, 1500)
 })
