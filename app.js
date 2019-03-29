@@ -18,12 +18,10 @@ app.service('arrayService', function ($interval, $http) {
   this.load = function () {
     $http.get("https://mknj.de/42.json").then(function (res) {
       i = res.data.i
-      var wert
       array.length = 0
       res.data.value.forEach(wert => array.push(wert))
     }
     ).catch(console.log)
-    return array
   }
   this.clearWrong = function () {
     array = []
