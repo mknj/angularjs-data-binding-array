@@ -3,6 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "angular": "1.6.5"
+    "angular": "1.7.9"
   }
 }
